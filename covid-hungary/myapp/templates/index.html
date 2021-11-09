@@ -1,0 +1,129 @@
+{% extends "skeleton/base.html" %}
+
+{% block title %}Koronavírus információ{% endblock %}
+
+{% block page %}
+<div class="container">
+    <h2 class="mt-4 mb-0"><i class="fas fa-chart-area"></i> Statisztika</h2>
+    <p class="m-0">Könnyen átlátható koronavírus statisztikák.</p>
+    <hr>
+    <div class="row">
+        <div class="col">
+            <div class="card mb-2">
+                <div class="card-body">
+                    <h3 class="card-text">Igazolt esetek: <span class="float-end ms-5">{{ covid_data["data"]["confirmed"] }}</span></h3>
+                    <h4 class="card-text">Halálesetek: <span class="float-end ms-5">{{ covid_data["data"]["deaths"] }}</span></h4>
+                    <h4 class="card-text mb-0">Lekérdezve: <span class="float-end ms-5">{{ covid_data["dt"] }}</span></h4>
+                    <p class="text-end mb-0">(hónap/nav/év)</p>
+                </div>
+            </div>
+            <div class="card mb-2">
+                <div class="card-body text-warning">
+                    <h3 class="card-text">Figyelem</h3>
+                    <h6 class="card-text">A grafikon és a fenti statisztika forrása nem ugyanaz, ezért apró eltérések felmerülhetnek. A fenti adatok forrása <a class="text-white" href="https://nuttaphat.com/covid19-api/">itt</a> található, míg a grafikoné <a class="text-white" href="https://ourworldindata.org/grapher/covid-tests-cases-deaths?country=~HUN">itt</a>.</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-2">
+                <iframe src="https://ourworldindata.org/grapher/covid-tests-cases-deaths?country=~HUN" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+            </div>
+        </div>
+    </div>
+    <h2 class="mt-4 mb-0"><i class="fas fa-info-circle"></i> További információ</h2>
+    <p class="m-0">Megbízható források a koronavírussal kapcsolatos információkhoz.</p>
+    <hr>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <a href="https://koronavirus.gov.hu/" class="text-white text-decoration-none">
+                <div class="card mb-2">
+                    <div class="card-body">
+                        <h3 class="card-text mb-0">koronavirus.gov.hu</h3>
+                        <p class="card-text mb-0 text-center">(kormányzati)</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="https://hu.wikipedia.org/wiki/Covid19" class="text-white text-decoration-none">
+                <div class="card mb-2">
+                    <div class="card-body">
+                        <h3 class="card-text mb-0">Wikipédia</h3>
+                        <p class="card-text mb-0 text-center">(magyar)</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" class="text-white text-decoration-none">
+                <div class="card mb-2">
+                    <div class="card-body">
+                        <h3 class="card-text mb-0">WHO</h3>
+                        <p class="card-text mb-0 text-center">(angol)</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-auto">
+            <a href="https://www.ecdc.europa.eu/en/covid-19" class="text-white text-decoration-none">
+                <div class="card mb-2">
+                    <div class="card-body">
+                        <h3 class="card-text mb-0">ECDC</h3>
+                        <p class="card-text mb-0 text-center">(angol)</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <h2 class="mt-4 mb-0"><i class="fas fa-virus-slash"></i> Vigyázz magadra</h2>
+    <p class="m-0">Vigyázz a saját és a környezetedben lévők egészségére.</p>
+    <hr>
+    <div class="row justify-items-center">
+        <div class="col d-flex">
+            <div class="card mb-2 d-flex">
+                <div class="my-auto p-2 text-center">
+                    <h1 class="card-text mb-2 text-accent"><i class="fas fa-head-side-mask"></i></h1>
+                    <h3 class="card-text mb-0">Viselj maszkot</h3>
+                    <p class="card-text mb-0 ">Zárt térben (pl. buszon, munkahelyen, iskolában) mindenképpen viselj maszkot.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col d-flex">
+            <div class="card mb-2 d-flex">
+                <div class="my-auto p-2 text-center">
+                    <h1 class="card-text mb-2 text-accent"><i class="fas fa-users-slash"></i></h1>
+                    <h3 class="card-text mb-0">Kerüld a tömeget</h3>
+                    <p class="card-text mb-0 ">A vírus könnyen terjed a tömegben, ezért csak akkor menj sok ember közé, ha muszáj.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col d-flex">
+            <div class="card mb-2 d-flex">
+                <div class="my-auto p-2 text-center">
+                    <h1 class="card-text mb-2 text-accent"><i class="fas fa-people-arrows"></i></h1>
+                    <h3 class="card-text mb-0">Tarts távolságot</h3>
+                    <p class="card-text mb-0 ">Tarts legalább másfél méteres távolságot másoktól, ha lehetséges.</p>
+                </div>
+            </div>
+        </div>
+        <p class="text-muted mt-2 mb-0 text-center">Ezek csak tanácsok, még több tippért, illetve a teendőkről baj esetén <a href="https://koronavirus.gov.hu/megelozes" class="text-muted">itt</a> olvashatsz.</p>
+    </div>
+    <h2 class="mt-4 mb-0"><i class="fas fa-newspaper"></i> Hírek</h2>
+    <p class="m-0">A híreket automatikusan gyűjti az oldal, ezért becsúszhat 1-2 cikk aminek semmi köze a témához.</p>
+    <hr>
+    <div class="card-columns">
+        {% for news in covid_news %}
+        <div class="col">
+            <a href="{{ news.url }}" class="text-white text-decoration-none">
+                <div class="card my-2">
+                    <div class="card-body">
+                        <h3 class="card-text">{{ news.title }}</h3>
+                        <p class="card-text mb-0"><i>Forrás: {{ news.publisher.title }}</i></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
